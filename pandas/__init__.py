@@ -176,6 +176,7 @@ from pandas.io.json import _json_normalize as json_normalize
 from pandas.util._tester import test
 import pandas.testing
 import pandas.arrays
+from  pandas.compat import PY37
 
 # use the closest tagged version if possible
 from ._version import get_versions
@@ -187,7 +188,7 @@ del get_versions, v
 
 # GH 27101
 # TODO: remove Panel compat in 1.0
-if pandas.compat.PY37:
+if PY37:
 
     def __getattr__(name):
         import warnings
